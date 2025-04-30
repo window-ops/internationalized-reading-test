@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Internationalized Reading Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1090px;
+        margin: 10px auto;
+        padding: 10px 20px;
+        background: #f9f9f9;
+        color: #222;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: #004080;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .question {
+        margin-bottom: 1.5em;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .choices label {
+        display: block;
+        margin: 6px 0;
+        cursor: pointer;
+      }
+
+      button {
+        background-color: #004080;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        margin: 0;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #0066cc;
+      }
+
+      #result,
+      #sat-result,
+      #lsat-result {
+        font-weight: bold;
+        margin-top: 20px;
+        min-height: 2em;
+      }
+
+      .disclaimer {
+        font-size: 0.9em;
+        font-style: italic;
+        color: #555;
+        margin-top: 10px;
+        border-top: 1px solid #ccc;
+        padding-top: 10px;
+      }
+
+      pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        background-color: #eaeaea;
+        padding: 1em;
+        border-radius: 4px;
+        font-family: monospace, monospace;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .button-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .button-row button {
+        width: 49%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="landing-page">
+      <h1>Internationalized Reading Test</h1>
+      <p>Welcome! Choose the test style you want to take:</p>
+      <button id="choose-sat" style="margin-right:10px; margin-bottom:10px;">SAT-Style Reading Test</button>
+      <button id="choose-lsat">LSAT-Style Reading Test</button>
+      <p class="disclaimer"><strong>Disclaimer:</strong> These tests are fictional, inspired by SAT and LSAT reading models, written and internationalized by an Eastern European (Romanian) author.<br><br>They incorporate cultural and thematic elements characteristic of Romanian and broader Eastern European perspectives - for example, the literary passage draws on 19th century Romanian Romanticism, emphasizing a direct and intense connection to nature through vivid imagery, rather than the often more implicit or varied treatments found in American texts.<br><br>Likewise, the opinion passage reflects a regional cultural phenomenon by discussing "doomer music", a genre prevalent in post-Soviet and Eastern European contexts, which differs from typical American cultural references often centered around mainstream or Western genres.<br><br>With these distinctions, the test content intentionally diverges from standard American test biases, aiming to offer a globally interpretable reading experience.<br><br>They do not represent actual College Board or LSAT materials in any way. In fact, they are shorter than official models and have multiple questions per text.</p>
+    </div>
+    <div id="sat-test" class="hidden">
+      <h1>SAT-Style Global Reading Test</h1>
+      <section>
+        <h2>Passage 1: Literary Text<br><small><em>The following text is an excerpt from Mihai Eminescu's 1878 poem "Fiind băiet păduri cutreieram" translated from Romanian. As the name suggests, a boy wanders in the woods.</em></small></h2>
+        <pre>As a boy I roamed the woods<br>And I used to lie by the spring,<br>And put my right arm under my head<br>I can hear the sound of the water:<br>A soft rustle went from branch to branch<br>And a sleepy odor came.<br>And so I used to eat all night,<br>Softly lulled by the waves.</pre>
+        <div class="question" data-question="sat1">
+          <p><strong>1. Which choice best describes the mood of the poem?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat1" value="A"/>A) Energetic and adventurous</label>
+            <label><input type="radio" name="sat1" value="B"/>B) Anxious and fearful</label>
+            <label><input type="radio" name="sat1" value="C"/>C) Joyful and celebratory</label>
+            <label><input type="radio" name="sat1" value="D"/>D) Calm and nostalgic</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat2">
+          <p><strong>2. The phrase "a soft rustle went from branch to branch" primarily serves to:</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat2" value="A"/>A) Create a peaceful atmosphere</label>
+            <label><input type="radio" name="sat2" value="B"/>B) Emphasize the noise of the forest animals</label>
+            <label><input type="radio" name="sat2" value="C"/>C) Show the speaker's fear of being alone</label>
+            <label><input type="radio" name="sat2" value="D"/>D) Highlight the arrival of a storm</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat3">
+          <p><strong>3. What might "a sleepy odor" symbolize in the poem?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat3" value="A"/>A) The scent of danger</label>
+            <label><input type="radio" name="sat3" value="B"/>B) The passing of time quickly</label>
+            <label><input type="radio" name="sat3" value="C"/>C) The sense of calmness and rest</label>
+            <label><input type="radio" name="sat3" value="D"/>D) The smell of something decayed</label>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Passage 2: Non-Literary Text</h2>
+        <pre>It is several years since Pasi Sahlberg used the term Global Education Reform Movement, or GERM, to describe the emergence of a new global orthodoxy in education policy. The acronym-as-analogy worked perfectly to describe a phenomenon that Sahlberg identified as both spreading and destructive, behaving "like an epidemic that spreads and infects education systems through a virus". The power of such acronyms lies in the extent to which they take hold in the social imaginary and act as a signifier for a complex amalgam of policies and practices that students and educators experience as an education system that feels "cracked".<br><br>Sahlberg has identified the principal features of the GERM as increased standardisation, a narrowing of the curriculum to focus on core subjects/knowledge, the growth of high stakes accountability and the use of corporate management practices as the key features of the new orthodoxy.</pre>
+        <div class="question" data-question="sat4">
+          <p><strong>4. According to the text, why is the term GERM used as an analogy?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat4" value="A"/>A) Because it describes a beneficial solution for all education systems</label>
+            <label><input type="radio" name="sat4" value="B"/>B) Because it shows how education reforms spread quickly and negatively</label>
+            <label><input type="radio" name="sat4" value="C"/>C) Because it reflects a medical approach to education</label>
+            <label><input type="radio" name="sat4" value="D"/>D) Because it refers to the viral nature of students' learning processes</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat5">
+          <p><strong>5. What does the author mean by stating that education systems feel "cracked"?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat5" value="A"/>A) They are perceived as broken or flawed</label>
+            <label><input type="radio" name="sat5" value="B"/>B) They are physically damaged buildings</label>
+            <label><input type="radio" name="sat5" value="C"/>C) They are too rigidly standardized</label>
+            <label><input type="radio" name="sat5" value="D"/>D) They are increasing in popularity globally</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat6">
+          <p><strong>6. Which of the following is NOT listed as a feature of GERM?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat6" value="A"/>A) Increased standardisation</label>
+            <label><input type="radio" name="sat6" value="B"/>B) Growth of high stakes accountability</label>
+            <label><input type="radio" name="sat6" value="C"/>C) Use of corporate management methods</label>
+            <label><input type="radio" name="sat6" value="D"/>D) Greater focus on creative arts</label>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Passage 3: Opinion Text<br><small><em>Excerpt from the opinion article "Why Do I Find Doomer Music So Alluring?" by Ashraff Hathibelagal</em></small></h2>
+        <pre>Doomer music isn't a genre. It's more of an umbrella term that includes genres such as synthwave, vaporwave, sovietwave, and retrowave. These genres themselves don't have very clear definitions. But there's something common to them: a subtle feeling of sadness. Don't get me wrong, these are not sad, depressing songs. Doomer music makes you feel a different kind of sadness. This sadness feels more like nostalgia, a sense of pain that's actually sweet.</pre>
+        <div class="question" data-question="sat7">
+          <p><strong>7. What does the author suggest about the emotional effect of doomer music?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat7" value="A"/>A) It causes sadness that is overwhelming and depressing</label>
+            <label><input type="radio" name="sat7" value="B"/>B) It is confusing because of unclear genre definitions</label>
+            <label><input type="radio" name="sat7" value="C"/>C) It evokes a bittersweet, nostalgic feeling</label>
+            <label><input type="radio" name="sat7" value="D"/>D) It primarily inspires joy and excitement</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat8">
+          <p><strong>8. Which of the following best summarizes the opinion expressed?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat8" value="A"/>A) Doomer music is a clearly defined and popular music genre</label>
+            <label><input type="radio" name="sat8" value="B"/>B) Doomer music uniquely blends sadness with sweetness in emotion</label>
+            <label><input type="radio" name="sat8" value="C"/>C) Doomer music is characterized by harsh and aggressive tones</label>
+            <label><input type="radio" name="sat8" value="D"/>D) Doomer music is unappealing because it lacks clear boundaries</label>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Passage 4: Critical Thinking</h2>
+        <pre>A lawsuit argues that using the tests violates the state's anti-discrimination statute because it disadvantages children of color, children from low-income families and children with disabilities. Research seems to support this notion.<br><br>With regard to race, in 2018, combined SAT scores for Asian and White students averaged over 1100, while all other groups averaged below 1000. With regard to income, a 2015 analysis found that students with family income less than $20,000 scored lowest on the test, and those with family income above $200,000 scored highest. And we're not talking about just a couple of points. The average reading score for those students whose family income is below $20,000 is 433, but the average for those with income of above $200,000 is 570. Clearly, there is disadvantage.<br><br>The disadvantage is typically attributed to test preparation. There is substantial evidence that test prep can raise test scores, and even the College Board who administers the SAT test admits there are benefits associated with test prep. But high quality test prep can be expensive, and many can't afford the fees associated with these tutoring classes. Beyond test preparation, high income students often have access to educational opportunities not available to low income students.</pre>
+        <div class="question" data-question="sat9">
+          <p><strong>9. What is the main concern raised about the SAT according to the passage?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat9" value="A"/>A) The SAT does not measure reading skills properly</label>
+            <label><input type="radio" name="sat9" value="B"/>B) The SAT scores have been declining globally</label>
+            <label><input type="radio" name="sat9" value="C"/>C) The format of the SAT is outdated</label>
+            <label><input type="radio" name="sat9" value="D"/>D) The SAT unfairly disadvantages certain groups</label>
+          </div>
+        </div>
+        <div class="question" data-question="sat10">
+          <p><strong>10. Which of the following statements best reflects a potential cause of the disadvantage in SAT scores?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="sat10" value="A"/>A) The cost and availability of test prep contributes to score disparities</label>
+            <label><input type="radio" name="sat10" value="B"/>B) Test preparation is equally accessible to all students</label>
+            <label><input type="radio" name="sat10" value="C"/>C) Students from low-income families have access to more test prep resources</label>
+            <label><input type="radio" name="sat10" value="D"/>D) Socioeconomic background has no influence on test scores</label>
+          </div>
+        </div>
+      </section>
+      <div class="button-row">
+        <button id="sat-submit">Submit SAT-Style Test</button>
+        <button id="sat-back" style="background:#555;">Back to Home</button>
+      </div>
+      <div id="sat-result" role="alert"></div>
+    </div>
+    <div id="lsat-test" class="hidden">
+      <h1>LSAT-Style Global Reading Test</h1>
+      <section>
+        <h2>Passage 1: Literary Text<br><small><em>The following text is an excerpt from Mihai Eminescu's 1878 poem "Fiind băiet păduri cutreieram" translated from Romanian. As the name suggests, a boy wanders in the woods.</em></small></h2>
+        <pre>As a boy I roamed the woods<br>And I used to lie by the spring,<br>And put my right arm under my head<br>I can hear the sound of the water:<br>A soft rustle went from branch to branch<br>And a sleepy odor came.<br>And so I used to eat all night,<br>Softly lulled by the waves.</pre>
+        <div class="question" data-question="lsat1">
+          <p><strong>1. The author's depiction of nature primarily serves to:</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="lsat1" value="A"/>A) emphasize the speaker's youthful energy and activity</label>
+            <label><input type="radio" name="lsat1" value="B"/>B) suggest the dangers lurking in the forest during childhood</label>
+            <label><input type="radio" name="lsat1" value="C"/>C) evoke a peaceful and sensory-rich environment</label>
+            <label><input type="radio" name="lsat1" value="D"/>D) illustrate the overwhelming noise of the woods</label>
+          </div>
+        </div>
+        <div class="question" data-question="lsat2">
+          <p><strong>2. The poet's use of "a sleepy odor" most likely suggests:</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="lsat2" value="A"/>A) a calming and somnolent atmosphere</label>
+            <label><input type="radio" name="lsat2" value="B"/>B) the scent of decay</label>
+            <label><input type="radio" name="lsat2" value="C"/>C) the dangers associated with the forest</label>
+            <label><input type="radio" name="lsat2" value="D"/>D) the onset of nightfall</label>
+          </div>
+        </div>
+        <div class="question" data-question="lsat3">
+          <p><strong>3. Which one of the following can be inferred about the speaker's relationship to the natural world?</strong>
+          </p>
+          <div class="choices">
+            <label><input type="radio" name="lsat3" value="A"/>A) The speaker feels disconnected from the forest and its elements</label>
+            <label><input type="radio" name="lsat3" value="B"/>B) The speaker fears the sounds and smells of the woods</label>
+            <label><input type="radio" name="lsat3" value="C"/>C) The speaker seeks to conquer or master the wilderness</label>
+            <label><input type="radio" name="lsat3" value="D"/>D) The speaker finds comfort and tranquility in nature</label>
+          </div>
+        </div>
+      </section>
+        <section>
+          <h2>Passage 2: Non-Literary Text - Argument on Global Education Reform Movement (GERM)</h2>
+          <pre>Pasi Sahlberg coined the term Global Education Reform Movement (GERM) to describe a worldwide trend in education policy. The analogy to a germ or virus reflects Sahlberg's view that this trend spreads rapidly and negatively affects educational systems. He argues that features of GERM include increased standardisation, narrowing curricula to core subjects, high-stakes accountability, and adoption of corporate management methods. These have led to an education system perceived as "cracked" by students and educators.</pre>
+          <div class="question" data-question="lsat4">
+            <p><strong>4. Which one of the following best expresses the author's main conclusion about GERM?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat4" value="A"/>A) GERM has improved education systems worldwide</label>
+              <label><input type="radio" name="lsat4" value="B"/>B) GERM spreads like a virus and damages education quality</label>
+              <label><input type="radio" name="lsat4" value="C"/>C) GERM is difficult to define due to varied policies</label>
+              <label><input type="radio" name="lsat4" value="D"/>D) GERM is beneficial because it increases accountability</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat5">
+            <p><strong>5. The analogy between GERM and a virus is used primarily to:</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat5" value="A"/>A) show that GERM can be cured through educational reform</label>
+              <label><input type="radio" name="lsat5" value="B"/>B) imply that GERM is welcomed and healthy for schools</label>
+              <label><input type="radio" name="lsat5" value="C"/>C) suggest GERM spreads quickly and has harmful effects</label>
+              <label><input type="radio" name="lsat5" value="D"/>D) emphasize the biological basis of education systems</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat6">
+            <p><strong>6. If a country adopts policies aligned with GERM, which of the following consequences would most likely occur according to the passage?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat6" value="A"/>A) The educational culture becomes more flexible and holistic</label>
+              <label><input type="radio" name="lsat6" value="B"/>B) Student and educator satisfaction increases</label>
+              <label><input type="radio" name="lsat6" value="C"/>C) The curriculum becomes more diverse and expansive</label>
+              <label><input type="radio" name="lsat6" value="D"/>D) The curriculum narrows and focuses mainly on core subjects</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat7">
+            <p><strong>7. Which of the following, if true, would most weaken the argument presented by Sahlberg?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat7" value="A"/>A) Some educational systems have improved student outcomes after adopting GERM policies</label>
+              <label><input type="radio" name="lsat7" value="B"/>B) Students perceive the education system as "cracked"</label>
+              <label><input type="radio" name="lsat7" value="C"/>C) Corporate management methods have reduced costs in education</label>
+              <label><input type="radio" name="lsat7" value="D"/>D) Standardisation increases comparability of student achievement across countries</label>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Passage 3: Opinion Text - "Why Do I Find Doomer Music So Alluring?"</h2>
+          <pre>Doomer music is not a precise genre but an umbrella term covering genres like synthwave, vaporwave, sovietwave, and retrowave. These genres lack strict definitions but share a subtle feeling of sadness. Unlike depressing music, doomer music evokes a bittersweet, nostalgic sadness - a sense of pain that is strangely sweet.</pre>
+          <div class="question" data-question="lsat8">
+            <p><strong>8. The author's primary purpose is to:</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat8" value="A"/>A) argue that doomer music is a clearly defined, popular genre</label>
+              <label><input type="radio" name="lsat8" value="B"/>B) explain a unique emotional experience associated with doomer music</label>
+              <label><input type="radio" name="lsat8" value="C"/>C) criticize doomer music for lacking clear boundaries</label>
+              <label><input type="radio" name="lsat8" value="D"/>D) outline the historical development of doomer music genres</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat9">
+            <p><strong>9. The passage suggests that doomer music's sadness is:</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat9" value="A"/>A) overtly depressing and sorrowful</label>
+              <label><input type="radio" name="lsat9" value="B"/>B) indistinguishable from all other sad music</label>
+              <label><input type="radio" name="lsat9" value="C"/>C) distinct for its nostalgic and bittersweet qualities</label>
+              <label><input type="radio" name="lsat9" value="D"/>D) a product of the music's unclear genre definitions</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat10">
+            <p><strong>10. Which one of the following can be inferred from the passage?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat10" value="A"/>A) Listeners of doomer music generally feel joy rather than sadness</label>
+              <label><input type="radio" name="lsat10" value="B"/>B) All subgenres of doomer music follow the exact same stylistic formulas</label>
+              <label><input type="radio" name="lsat10" value="C"/>C) The author finds doomer music unappealing</label>
+              <label><input type="radio" name="lsat10" value="D"/>D) The sadness of doomer music is reminiscent of fond memories or past pain</label>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h2>Passage 4: Logical Reasoning - Critique of the SAT and College Board Testing</h2>
+          <pre>A lawsuit claims that SAT testing violates anti-discrimination laws because it disadvantages children of color, low-income children, and children with disabilities. Research cited shows disparities in scores by race and income, with higher income and Asian/White students scoring significantly better. The disadvantage is attributed partly to the high cost and unequal access to test preparation, which improves scores but is not affordable for all. Moreover, high-income students have access to educational opportunities unavailable to others.</pre>
+          <div class="question" data-question="lsat11">
+            <p><strong>11. The argument primarily depends on which of the following assumptions?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat11" value="A"/>A) Inequities in access to test preparation contribute to score disparities</label>
+              <label><input type="radio" name="lsat11" value="B"/>B) Disparities in SAT scores are caused solely by biological differences</label>
+              <label><input type="radio" name="lsat11" value="C"/>C) The SAT is a perfectly objective measure of academic ability</label>
+              <label><input type="radio" name="lsat11" value="D"/>D) All students have equal access to educational opportunities</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat12">
+            <p><strong>12. Which one of the following, if true, would most strengthen the argument that the SAT disadvantages certain groups?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat12" value="A"/>A) Test preparation services are uniformly available and affordable worldwide</label>
+              <label><input type="radio" name="lsat12" value="B"/>B) The SAT was recently revised to eliminate cultural bias</label>
+              <label><input type="radio" name="lsat12" value="C"/>C) High-income students score better on the SAT even without test preparation</label>
+              <label><input type="radio" name="lsat12" value="D"/>D) Students from all income brackets receive the same amount of schooling</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat13">
+            <p><strong>13. The reference to "test preparation" functions primarily to:</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat13" value="A"/>A) Argue that the SAT is unfair for all students</label>
+              <label><input type="radio" name="lsat13" value="B"/>B) Identify one factor that contributes to disparities in test performance</label>
+              <label><input type="radio" name="lsat13" value="C"/>C) Show that the SAT is easily beaten with practice</label>
+              <label><input type="radio" name="lsat13" value="D"/>D) Suggest that the SAT benefits only high-income students</label>
+            </div>
+          </div>
+          <div class="question" data-question="lsat14">
+            <p><strong>14. Which of the following best describes a major implication of the passage?</strong></p>
+            <div class="choices">
+              <label><input type="radio" name="lsat14" value="A"/>A) Educational inequities are reflected in standardized test scores</label>
+              <label><input type="radio" name="lsat14" value="B"/>B) The SAT should be abolished immediately</label>
+              <label><input type="radio" name="lsat14" value="C"/>C) Race and income have no impact on academic achievement</label>
+              <label><input type="radio" name="lsat14" value="D"/>D) Everyone has a fair chance to succeed in standardized testing</label>
+            </div>
+          </div>
+        </section>
+        <div class="button-row">
+          <button id="lsat-submit">Submit LSAT-Style Test</button>
+          <button id="lsat-back" style="background:#555;">Back to Home</button>
+        </div>
+        <div id="lsat-result" role="alert"></div>
+    </div>
+    <script>
+      // Page references
+      const landing = document.getElementById('landing-page');
+      const satTest = document.getElementById('sat-test');
+      const lsatTest = document.getElementById('lsat-test');
+      // Buttons for choosing test
+      document.getElementById('choose-sat').addEventListener('click', () => {
+        landing.classList.add('hidden');
+        satTest.classList.remove('hidden');
+        window.scrollTo(0, 0);
+      });
+      document.getElementById('choose-lsat').addEventListener('click', () => {
+        landing.classList.add('hidden');
+        lsatTest.classList.remove('hidden');
+        window.scrollTo(0, 0);
+      });
+      // Back buttons
+      document.getElementById('sat-back').addEventListener('click', () => {
+        satTest.classList.add('hidden');
+        landing.classList.remove('hidden');
+        resetForm('sat-test');
+        document.getElementById('sat-result').textContent = '';
+        window.scrollTo(0, 0);
+      });
+      document.getElementById('lsat-back').addEventListener('click', () => {
+        lsatTest.classList.add('hidden');
+        landing.classList.remove('hidden');
+        resetForm('lsat-test');
+        document.getElementById('lsat-result').textContent = '';
+        window.scrollTo(0, 0);
+      });
+      // Helper to reset all radio inputs inside containerId
+      function resetForm(containerId) {
+        const container = document.getElementById(containerId);
+        const inputs = container.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => input.checked = false);
+      }
+      // Correct answers for SAT test
+      const satAnswers = {
+        sat1: 'D',
+        sat2: 'A',
+        sat3: 'C',
+        sat4: 'B',
+        sat5: 'A',
+        sat6: 'D',
+        sat7: 'C',
+        sat8: 'B',
+        sat9: 'D',
+        sat10: 'A'
+      };
+      // SAT submit logic
+      document.getElementById('sat-submit').addEventListener('click', () => {
+        const questions = satTest.querySelectorAll('.question');
+        let answeredCount = 0;
+        let correctCount = 0;
+        questions.forEach(q => {
+          const name = q.getAttribute('data-question');
+          const checked = satTest.querySelector(`input[name="${name}"]:checked`);
+          if (checked) {
+            answeredCount++;
+            if (checked.value === satAnswers[name]) {correctCount++;
+            }
+          }
+        });
+        const total = questions.length;
+        const resultDiv = document.getElementById('sat-result');
+        if (answeredCount < total) {
+          resultDiv.style.color = '#b22222';
+          resultDiv.textContent = `You answered ${answeredCount} of ${total} questions. Please answer all questions before submitting.`;
+        } else {
+          const wrongCount = total - correctCount;
+          if (wrongCount == 0) {
+            resultDiv.style.color = '#008000';
+          } else {
+            resultDiv.style.color = '#b3b300';
+          }
+          resultDiv.textContent = `You answered all ${total} questions. Correct: ${correctCount}, Wrong: ${wrongCount}.`;
+        }
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+      // Correct answers for LSAT test (diversified answers)
+      const lsatAnswers = {
+        lsat1: 'C',
+        lsat2: 'A',
+        lsat3: 'D',
+        lsat4: 'B',
+        lsat5: 'C',
+        lsat6: 'D',
+        lsat7: 'A',
+        lsat8: 'B',
+        lsat9: 'C',
+        lsat10: 'D',
+        lsat11: 'A',
+        lsat12: 'C',
+        lsat13: 'B',
+        lsat14: 'A'
+      };
+      // LSAT submit logic
+      document.getElementById('lsat-submit').addEventListener('click', () => {
+        const questions = lsatTest.querySelectorAll('.question');
+        let answeredCount = 0;
+        let correctCount = 0;
+        questions.forEach(q => {
+          const name = q.getAttribute('data-question');
+          const checked = lsatTest.querySelector(`input[name="${name}"]:checked`);
+          if (checked) {
+            answeredCount++;
+            if (checked.value === lsatAnswers[name]) {correctCount++;
+            }
+          }
+        });
+        const total = questions.length;
+        const resultDiv = document.getElementById('lsat-result');
+        if (answeredCount < total) {
+          resultDiv.style.color = '#b22222';
+          resultDiv.textContent = `You answered ${answeredCount} of ${total} questions. Please answer all questions before submitting.`;
+        } else {
+          resultDiv.style.color = '#008000';
+          const wrongCount = total - correctCount;
+          resultDiv.textContent = `You answered all ${total} questions. Correct: ${correctCount}, Wrong: ${wrongCount}.`;
+        }
+        window.scrollTo(0, document.body.scrollHeight);
+      });
+    </script>
+  </body>
+</html>
