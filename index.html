@@ -436,7 +436,7 @@
           const wrongCount = total - correctCount;
           if (wrongCount == 0) {
             resultDiv.style.color = '#008000';
-          } else {
+          } else if (wrongCount > 0) {
             resultDiv.style.color = '#b3b300';
           }
           resultDiv.textContent = `You answered all ${total} questions. Correct: ${correctCount}, Wrong: ${wrongCount}.`;
